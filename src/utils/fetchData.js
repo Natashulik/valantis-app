@@ -15,7 +15,14 @@ export const fetchData = async (action, params) => {
     }),
   };
 
-  const result = await fetch(url, options);
-  const data = await result.json();
-  return data.result;
+  try {
+    const result = await fetch(url, options);
+    const data = await result.json();
+    if (!result.ok) {
+      console.log("Код ошибки: " + result.status);
+    }
+    return data.result;
+  } catch (err) {
+    console.log("Ошибка: " + err.message);
+  }
 };

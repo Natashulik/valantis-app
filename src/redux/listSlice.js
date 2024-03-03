@@ -5,6 +5,7 @@ const initialState = {
   items: [],
   currentPage: 1,
   totalPages: 0,
+  isLoading: true,
 };
 
 export const listSlice = createSlice({
@@ -23,10 +24,18 @@ export const listSlice = createSlice({
     setTotalPages: (state, action) => {
       state.totalPages = action.payload;
     },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
   },
 });
 
-export const { setUniqueIds, setItems, setCurrentPage, setTotalPages } =
-  listSlice.actions;
+export const {
+  setUniqueIds,
+  setItems,
+  setCurrentPage,
+  setTotalPages,
+  setIsLoading,
+} = listSlice.actions;
 
 export default listSlice.reducer;
