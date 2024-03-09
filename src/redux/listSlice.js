@@ -4,7 +4,7 @@ const initialState = {
   uniqueIds: [],
   items: [],
   currentPage: 1,
-  totalPages: 0,
+  totalPages: 1,
   isLoading: true,
 };
 

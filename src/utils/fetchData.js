@@ -17,10 +17,15 @@ export const fetchData = async (action, params) => {
 
   try {
     const result = await fetch(url, options);
-    const data = await result.json();
+
+    if (result.status === 500) {
+      console.log("Ошибка сервера");
+    }
+
     if (!result.ok) {
       console.log("Код ошибки: " + result.status);
     }
+    const data = await result.json();
     return data.result;
   } catch (err) {
     console.log("Ошибка: " + err.message);
