@@ -1,7 +1,7 @@
 import { hashedPassword } from "./hashedPassword";
 
 export const fetchData = async (action, params) => {
-  let url = `http://api.valantis.store:40000/`;
+  let url = `https://api.valantis.store:41000/`;
 
   const options = {
     method: "POST",
